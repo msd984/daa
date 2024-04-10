@@ -5,31 +5,30 @@
  int flag = 0;
  void main ()
  {
- int subset(int,int);
- int i;
- printf ("Enter the number of elements in set\n");
- scanf ("%d", &n);
- printf ("Enter the set values\n");
- for (i = 0; i < n; ++i)
- scanf ("%d", &s[i]);
- printf ("Enter the sum\n");
- scanf ("%d", &d);
- printf ("The progrm output is\n");
- subset (0, 0);
- if (flag == 0)
- printf ("there is no solution");
- getch ();
+    int subset(int,int);
+    int i;
+    printf ("Enter the number of elements in set\n");
+    scanf ("%d", &n);
+    printf ("Enter the set values\n");
+    for (i = 0; i < n; ++i)
+        scanf ("%d", &s[i]);
+    printf ("Enter the sum\n");
+    scanf ("%d", &d);
+    printf ("The progrm output is\n");
+    subset (0, 0);
+    if (flag == 0)
+        printf ("there is no solution");
  }
  int subset (int sum, int i)
  {
- if (sum == d)
- {
- flag = 1;
- display (count);
-return0;
+    if (sum == d)
+    {
+        flag = 1;
+        display (count);
+        return 0;
  }
  if(sum>d|| i>=n)
- return0;
+ return 0;
  else
  {
  set[count]=s[i];
@@ -39,10 +38,9 @@ return0;
  subset(sum,i+1);
  }
  }
- void
- display(intcount)
+ void display(intcount)
  {
- inti;
+ int i;
  printf("{");
  for(i=0;i<count;i++)
  printf("%d",set[i]);
