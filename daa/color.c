@@ -51,9 +51,9 @@
  graphcoloring(k+1);
  }
  }
- voidnextvalue(intk)
+ void nextvalue(int k)
  {
- intj;
+ int j;
  while(1)
  {
  x[k]=(x[k]+1)%(m+1);
