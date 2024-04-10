@@ -1,23 +1,22 @@
-#include<stdio.h>
- #include<conio.h>
+ #include<stdio.h>
  int min(int,int);
  void floyds(int c[10][10],int n)
  {
  int i,j,k;
  for (k=1;k<=n;k++)
- for (i=1;i<=n;i++)
- for (j=1;j<=n;j++)
- if(i==j)
-c[i][j]=0;
- else
- c[i][j]=min(c[i][j],c[i][k]+c[k][j]);
+    for (i=1;i<=n;i++)
+        for (j=1;j<=n;j++)
+            if(i==j)
+                c[i][j]=0;
+            else
+                c[i][j]=min(c[i][j],c[i][k]+c[k][j]);
  }
  int min(int a,int b)
  {
  if(a<b)
- return a;
+    return a;
  else
- return b;
+    return b;
  }
  void main()
  {
@@ -28,36 +27,35 @@ c[i][j]=0;
  scanf("%d",&e);
  for (i=1;i<=n;i++)
  {
- for (j=1;j<=n;j++)
- c[i][j]=999;
+    for (j=1;j<=n;j++)
+        c[i][j]=999;
  }
  printf("\n enter the edge,weight for %d edges \n",e);
  for (i=1;i<=e;i++)
  {
+    scanf("%d%d%d",&u,&v,&w);
+    c[u][v]=w;
  }
- scanf("%d%d%d",&u,&v,&w);
- c[u][v]=w;
  printf("\n Matrix of input data:\n");
  for (i=1;i<=n;i++)
  {
- for (j=1;j<=n;j++)
- printf("%d \t",c[i][j]);
- printf("\n");
+    for (j=1;j<=n;j++)
+        printf("%d \t",c[i][j]);
+    printf("\n");
  }
  floyds(c,n);
  printf("\n cost matrix:\n");
  for (i=1;i<=n;i++)
  {
- for (j=1;j<=n;j++)
- printf("%d \t",c[i][j]);
- printf("\n");
+    for (j=1;j<=n;j++)
+        printf("%d \t",c[i][j]);
+    printf("\n");
  }
  printf("\n shortest paths are:\n");
  for (i=1;i<=n;i++)
- for (j=1;j<=n;j++)
- {
- if(i!=j)
- printf("\nshortest path from %d to %d is %d",i,j,c[i][j]);
-}
- getch()
+    for (j=1;j<=n;j++)
+    {
+        if(i!=j)
+            printf("\nshortest path from %d to %d is %d",i,j,c[i][j]);
+    }
  }
