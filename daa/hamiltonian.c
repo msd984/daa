@@ -86,5 +86,5 @@ printf("total%dsolutions",c);
  {
  printf("\nsolutionsnotpossible");
  }
- return0;
+ return 0;
  }
